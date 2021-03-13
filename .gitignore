@@ -9,4 +9,6 @@ Test_BFT/Packages/packages-lock.json
 
 Test_BFT/.vs/
 
-Test_BFT/Assembly-CSharp.csproj
+Test_BFT/obj/
+
+*.csproj
