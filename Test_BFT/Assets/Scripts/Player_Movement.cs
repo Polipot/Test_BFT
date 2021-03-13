@@ -35,7 +35,8 @@ public class Player_Movement : MonoBehaviour
     {
         GetInput();
         Steer();
-        Accelerate();
+        Jules_Accelerate();
+        //Accelerate();
         UpdateWheePoses();
         //Debug.Log(Rb.velocity.magnitude);
     }
@@ -51,6 +52,16 @@ public class Player_Movement : MonoBehaviour
         SteeringAngle = maxSteerAngle * HorizontalInputValue;
         frontDriverW.steerAngle = SteeringAngle;
         frontPassengerW.steerAngle = SteeringAngle;
+    }
+
+    // ça c'est juste pour moi Adri à l'heure qu'il est tu peux probablement dégager cette fonction et remettre la tienne
+    void Jules_Accelerate()
+    {
+        float TouchInputValue = 0;
+        if (Input.touchCount > 1)
+            TouchInputValue = 1;
+        frontDriverW.motorTorque = TouchInputValue * MotorForce;
+        frontPassengerW.motorTorque = TouchInputValue * MotorForce;
     }
 
     void Accelerate()
