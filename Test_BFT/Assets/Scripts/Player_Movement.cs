@@ -37,7 +37,7 @@ public class Player_Movement : MonoBehaviour
         Steer();
         Accelerate();
         UpdateWheePoses();
-        Debug.Log(Rb.velocity.magnitude);
+        //Debug.Log(Rb.velocity.magnitude);
     }
 
     void GetInput()
@@ -57,6 +57,7 @@ public class Player_Movement : MonoBehaviour
     {
         frontDriverW.motorTorque = VerticalInputValue * MotorForce;
         frontPassengerW.motorTorque = VerticalInputValue * MotorForce;
+        Debug.Log(frontDriverW.motorTorque);
     }
 
     void UpdateWheelPose(WheelCollider mycollider, Transform mytransform)
