@@ -8,3 +8,5 @@ Test_BFT/Test_BFT.sln
 Test_BFT/Packages/packages-lock.json
 
 Test_BFT/.vs/
+
+Test_BFT/Assembly-CSharp-Editor.csproj
