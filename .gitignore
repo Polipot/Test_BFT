@@ -9,4 +9,10 @@ Test_BFT/Packages/packages-lock.json
 
 Test_BFT/.vs/
 
+<<<<<<< HEAD
 Test_BFT/Assembly-CSharp-Editor.csproj
+=======
+Test_BFT/obj/
+
+*.csproj
+>>>>>>> master
