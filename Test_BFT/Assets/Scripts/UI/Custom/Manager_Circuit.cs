@@ -35,6 +35,15 @@ public class Manager_Circuit : MonoBehaviour
 
     #region Button
 
+
+    public void LaunchCircuit()
+    {
+        if (!string.IsNullOrEmpty( circuits[index].NomSceneCircuit ))
+        {
+            SceneManager.LoadScene(circuits[index].NomSceneCircuit);
+        }
+    }
+
     public void SwitchCircuit(int add)
     {
         index += add;
@@ -73,4 +82,8 @@ public class Circuit
     public string NomCircuit;
     public string NomSceneCircuit;
     public int EtoileGet;
+
+    /*
+     * A lavenir, creer scriptable object avec playerpref pour save Etoile etc
+     * */
 }
