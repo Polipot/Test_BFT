@@ -54,7 +54,7 @@ public class Player_Movement : MonoBehaviour
 
     private void Update()
     {
-        debugText.text = " valeur horizontale = " + HorizontalInputValue;
+        //debugText.text = " valeur horizontale = " + HorizontalInputValue;
     }
 
     void GetInput()
