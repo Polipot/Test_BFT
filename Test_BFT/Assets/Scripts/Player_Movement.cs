@@ -16,6 +16,7 @@ public class Player_Movement : MonoBehaviour
     bool Firsttouch = true;
     GameObject FirstPoint;
     GameObject SecondPoint;
+    GameObject ThirdPoint;
     
 
     [Header("WheelCollider")]
@@ -32,9 +33,13 @@ public class Player_Movement : MonoBehaviour
 
     [Space(10)]
     [SerializeField] float maxSteerAngle;
-    [SerializeField] float MotorForce;
+    [SerializeField] float speed;
+     float MotorForce;
+    [SerializeField] float BrakeForce;
+    bool IsBraked = true ;
 
     [SerializeField] Text debugText;
+    [SerializeField] Text debugText2;
 
     [SerializeField] Transform CM;
 
@@ -49,7 +54,7 @@ public class Player_Movement : MonoBehaviour
     {
         GetInput();
         Steer();
-        
+        Brake();
         Accelerate();
         UpdateWheePoses();
         //Debug.Log(Rb.velocity.magnitude);
@@ -57,7 +62,8 @@ public class Player_Movement : MonoBehaviour
 
     private void Update()
     {
-        debugText.text = " valeur horizontale = " + HorizontalInputValue;
+        debugText.text = " freinage = " + frontDriverW.brakeTorque;
+        debugText2.text = " acceleration = " + frontDriverW.motorTorque;
     }    
 
     void GetInput()
@@ -73,9 +79,11 @@ public class Player_Movement : MonoBehaviour
                 
                 FirstPoint = Instantiate(Resources.Load<GameObject>("PointTouch"), touchpos1, Quaternion.identity);
                 SecondPoint = Instantiate(Resources.Load<GameObject>("PointTouch"), touchpos1, Quaternion.identity);
+                ThirdPoint = Instantiate(Resources.Load<GameObject>("PointTouch"), touchpos1, Quaternion.identity);
                 Firsttouch = false;
             }
             SecondPoint.transform.position = new Vector2(touchpos1.x, FirstPoint.transform.position.y);
+            ThirdPoint.transform.position = new Vector2(FirstPoint.transform.position.x, touchpos1.y);
             HorizontalInputValue = (SecondPoint.transform.position.x - FirstPoint.transform.position.x) / 20;
             HorizontalInputValue = Mathf.Clamp(Mathf.RoundToInt(HorizontalInputValue), -30, 30);
 
@@ -94,7 +102,8 @@ public class Player_Movement : MonoBehaviour
         {
             HorizontalInputValue = 30;
         }
-        //VerticalInputValue = Input.GetAxis("Vertical");
+        VerticalInputValue = Input.GetAxis("Vertical");
+        Debug.Log(VerticalInputValue);
     }
 
     void Steer()
@@ -108,20 +117,46 @@ public class Player_Movement : MonoBehaviour
    
     void Accelerate()
     {
-        if (Rb.velocity.magnitude <= 15)
-        {
-            Debug.Log("Accelere");
-            MotorForce = 3000;
-        }else
+
+        if (IsBraked == false)
         {
 
-            MotorForce = 0;
+            if (Rb.velocity.magnitude <= 15)
+            {
+                Debug.Log("Accelere");
+                MotorForce = speed;
+            }
+            else
+            {
+
+                MotorForce = 0;
+            }
+
+            //Debug.Log(backDriverW.motorTorque);
+            //Debug.Log(Rb.velocity.magnitude);
         }
+        else if (IsBraked == true ) MotorForce = 0;
         frontDriverW.motorTorque = MotorForce;
         frontPassengerW.motorTorque = MotorForce;
-        Debug.Log(backDriverW.motorTorque);
-        Debug.Log(Rb.velocity.magnitude);
     }
+
+    void Brake()
+    {
+        if (VerticalInputValue < 0 )
+        {
+            IsBraked = true;
+            Debug.Log("Freine");
+            frontDriverW.brakeTorque = BrakeForce * -VerticalInputValue;
+            frontPassengerW.brakeTorque = BrakeForce * -VerticalInputValue;
+        }
+        else 
+        {
+            IsBraked = false;
+            frontDriverW.brakeTorque = 0;
+            frontPassengerW.brakeTorque = 0;
+        }
+    }
+        
 
     void UpdateWheelPose(WheelCollider mycollider, Transform mytransform)
     {
