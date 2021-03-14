@@ -8,6 +8,7 @@ public class Player_Movement : MonoBehaviour
     float HorizontalInputValue;
     float VerticalInputValue;
     float SteeringAngle;
+    string NikTaMere;
 
     [Header("Input")]
     Touch touch;
