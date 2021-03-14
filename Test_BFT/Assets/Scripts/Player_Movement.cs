@@ -98,9 +98,7 @@ public class Player_Movement : MonoBehaviour
         frontPassengerW.steerAngle = SteeringAngle;
     }
 
-    // ça c'est juste pour moi Adri à l'heure qu'il est tu peux probablement dégager cette fonction et remettre la tienne
-    
-
+   
     void Accelerate()
     {
         backDriverW.motorTorque =   MotorForce;
