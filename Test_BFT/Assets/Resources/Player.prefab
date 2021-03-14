@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4620387868132507429}
-  - component: {fileID: 430736995042665180}
   m_Layer: 0
   m_Name: Accroche_Camera
   m_TagString: Untagged
@@ -33,24 +32,6 @@ Transform:
   m_Father: {fileID: 5791343165846264484}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 12.597, y: 0, z: 0}
---- !u!114 &430736995042665180
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 430736995042665179}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 612fd47266a5ef34d8bdb1932af8f6c9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AtachedVehicule: {fileID: 5791343165846264481}
-  CameraFolder: {fileID: 430736995042665179}
-  CameLocation: []
-  locationIndicator: 2
-  controllerRef: {fileID: 0}
-  smoothTime: 0.5
 --- !u!1 &2497522900357527531
 GameObject:
   m_ObjectHideFlags: 0
@@ -90,15 +71,15 @@ WheelCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2497522900357527531}
   m_Center: {x: 0, y: 0, z: 0}
-  m_Radius: 40.38
+  m_Radius: 40
   m_SuspensionSpring:
-    spring: 90000
-    damper: 9000
+    spring: 35000
+    damper: 4500
     targetPosition: 0.5
-  m_SuspensionDistance: 1
-  m_ForceAppPointDistance: 0.5
+  m_SuspensionDistance: 0.3
+  m_ForceAppPointDistance: 0
   m_Mass: 100
-  m_WheelDampingRate: 0.2
+  m_WheelDampingRate: 0.25
   m_ForwardFriction:
     m_ExtremumSlip: 0.4
     m_ExtremumValue: 1
@@ -151,15 +132,15 @@ WheelCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3137228556790490853}
   m_Center: {x: 0, y: 0, z: 0}
-  m_Radius: 40.38
+  m_Radius: 40
   m_SuspensionSpring:
-    spring: 90000
-    damper: 9000
+    spring: 35000
+    damper: 4500
     targetPosition: 0.5
-  m_SuspensionDistance: 1
-  m_ForceAppPointDistance: 0.5
+  m_SuspensionDistance: 0.3
+  m_ForceAppPointDistance: 0
   m_Mass: 100
-  m_WheelDampingRate: 0.2
+  m_WheelDampingRate: 0.25
   m_ForwardFriction:
     m_ExtremumSlip: 0.4
     m_ExtremumValue: 1
@@ -374,15 +355,15 @@ WheelCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4071018202219334276}
   m_Center: {x: 0, y: 0, z: 0}
-  m_Radius: 40.38
+  m_Radius: 40
   m_SuspensionSpring:
-    spring: 90000
-    damper: 9000
+    spring: 35000
+    damper: 4500
     targetPosition: 0.5
-  m_SuspensionDistance: 1
-  m_ForceAppPointDistance: 0.5
+  m_SuspensionDistance: 0.3
+  m_ForceAppPointDistance: 0
   m_Mass: 100
-  m_WheelDampingRate: 0.2
+  m_WheelDampingRate: 0.25
   m_ForwardFriction:
     m_ExtremumSlip: 0.4
     m_ExtremumValue: 1
@@ -495,15 +476,15 @@ WheelCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5647670209331317018}
   m_Center: {x: 0, y: 0, z: 0}
-  m_Radius: 40.38
+  m_Radius: 40
   m_SuspensionSpring:
-    spring: 90000
-    damper: 9000
+    spring: 35000
+    damper: 4500
     targetPosition: 0.5
-  m_SuspensionDistance: 1
-  m_ForceAppPointDistance: 0.5
+  m_SuspensionDistance: 0.3
+  m_ForceAppPointDistance: 0
   m_Mass: 100
-  m_WheelDampingRate: 0.2
+  m_WheelDampingRate: 0.25
   m_ForwardFriction:
     m_ExtremumSlip: 0.4
     m_ExtremumValue: 1
@@ -687,7 +668,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5791343165846264481}
   serializedVersion: 2
-  m_Mass: 800
+  m_Mass: 1000
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -716,9 +697,10 @@ MonoBehaviour:
   backDriverT: {fileID: 783071344928940990}
   backPassengerT: {fileID: 7191838837084124727}
   maxSteerAngle: 30
-  speed: 0
+  speed: 500
   BrakeForce: 300
   debugText: {fileID: 0}
+  debugText2: {fileID: 0}
   CM: {fileID: 0}
 --- !u!1 &5791343165984437997
 GameObject:
