@@ -36,11 +36,14 @@ public class Player_Movement : MonoBehaviour
 
     [SerializeField] Text debugText;
 
+    [SerializeField] Transform CM;
+
     Rigidbody Rb;
 
     private void Awake()
     {
         Rb = GetComponent<Rigidbody>();
+       
     }
     private void FixedUpdate()
     {
@@ -54,8 +57,8 @@ public class Player_Movement : MonoBehaviour
 
     private void Update()
     {
-        //debugText.text = " valeur horizontale = " + HorizontalInputValue;
-    }
+        debugText.text = " valeur horizontale = " + HorizontalInputValue;
+    }    
 
     void GetInput()
     {
@@ -73,10 +76,8 @@ public class Player_Movement : MonoBehaviour
                 Firsttouch = false;
             }
             SecondPoint.transform.position = new Vector2(touchpos1.x, FirstPoint.transform.position.y);
-            HorizontalInputValue = SecondPoint.transform.position.x - FirstPoint.transform.position.x;
-            HorizontalInputValue = HorizontalInputValue / 20;
-            HorizontalInputValue = Mathf.RoundToInt(HorizontalInputValue);
-            HorizontalInputValue = Mathf.Clamp(HorizontalInputValue, -30, 30);
+            HorizontalInputValue = (SecondPoint.transform.position.x - FirstPoint.transform.position.x) / 20;
+            HorizontalInputValue = Mathf.Clamp(Mathf.RoundToInt(HorizontalInputValue), -30, 30);
 
             Debug.Log(touchpos1);
         }
@@ -86,8 +87,14 @@ public class Player_Movement : MonoBehaviour
             HorizontalInputValue = 0;
         }
            
-        
-        VerticalInputValue = Input.GetAxis("Vertical");
+        if (Input.GetAxis("Horizontal") < 0)
+        {
+            HorizontalInputValue = -30;
+        }else if (Input.GetAxis("Horizontal") > 0)
+        {
+            HorizontalInputValue = 30;
+        }
+        //VerticalInputValue = Input.GetAxis("Vertical");
     }
 
     void Steer()
@@ -101,9 +108,19 @@ public class Player_Movement : MonoBehaviour
    
     void Accelerate()
     {
-        backDriverW.motorTorque =   MotorForce;
-        backPassengerW.motorTorque =  MotorForce;
-        Debug.Log(frontDriverW.motorTorque);
+        if (Rb.velocity.magnitude <= 15)
+        {
+            Debug.Log("Accelere");
+            MotorForce = 3000;
+        }else
+        {
+
+            MotorForce = 0;
+        }
+        frontDriverW.motorTorque = MotorForce;
+        frontPassengerW.motorTorque = MotorForce;
+        Debug.Log(backDriverW.motorTorque);
+        Debug.Log(Rb.velocity.magnitude);
     }
 
     void UpdateWheelPose(WheelCollider mycollider, Transform mytransform)

@@ -4310,7 +4310,7 @@ PrefabInstance:
       objectReference: {fileID: 2131909875}
     - target: {fileID: 3414097787005071842, guid: 62c8a3589f11b9346b76fa00c813d3b2, type: 3}
       propertyPath: MotorForce
-      value: 300
+      value: 3000
       objectReference: {fileID: 0}
     - target: {fileID: 5791343164056029352, guid: 62c8a3589f11b9346b76fa00c813d3b2, type: 3}
       propertyPath: m_Mesh
