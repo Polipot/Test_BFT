@@ -6,7 +6,7 @@ public class CameraController : MonoBehaviour
 {
     public GameObject Player;
     public Transform TargetCamera;
-    public GameObject CameraFolder;
+    //public GameObject CameraFolder;
     public Transform CameLocation;
     //public int locationIndicator = 2;
 
