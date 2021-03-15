@@ -62,7 +62,7 @@ public class Player_Movement : MonoBehaviour
 
     private void Update()
     {
-        debugText.text = " freinage = " + frontDriverW.brakeTorque;
+        debugText.text = " freinage = " + VerticalInputValue;
         debugText2.text = " acceleration = " + frontDriverW.motorTorque;
     }    
 
@@ -86,6 +86,9 @@ public class Player_Movement : MonoBehaviour
             ThirdPoint.transform.position = new Vector2(FirstPoint.transform.position.x, touchpos1.y);
             HorizontalInputValue = (SecondPoint.transform.position.x - FirstPoint.transform.position.x) / 20;
             HorizontalInputValue = Mathf.Clamp(Mathf.RoundToInt(HorizontalInputValue), -30, 30);
+            VerticalInputValue = FirstPoint.transform.position.y - ThirdPoint.transform.position.y;
+            VerticalInputValue = (Mathf.Clamp(VerticalInputValue, 0 , 500))/ 500 ;
+            
 
             Debug.Log(touchpos1);
         }
@@ -93,25 +96,35 @@ public class Player_Movement : MonoBehaviour
         {
             Firsttouch = true;
             HorizontalInputValue = 0;
+            VerticalInputValue = 0;
         }
            
-        if (Input.GetAxis("Horizontal") < 0)
-        {
-            HorizontalInputValue = -30;
-        }else if (Input.GetAxis("Horizontal") > 0)
-        {
-            HorizontalInputValue = 30;
-        }
-        VerticalInputValue = Input.GetAxis("Vertical");
+       // if (Input.GetAxis("Horizontal") < 0)
+       // {
+        //    HorizontalInputValue = -30;
+       // }else if (Input.GetAxis("Horizontal") > 0)
+       // {
+       //     HorizontalInputValue = 30;
+       // }
+       // VerticalInputValue = Input.GetAxis("Vertical");
         Debug.Log(VerticalInputValue);
     }
 
     void Steer()
     {
+        if (HorizontalInputValue < -5 || HorizontalInputValue > 5)
+        {
+            SteeringAngle = HorizontalInputValue * 1;
+            frontDriverW.steerAngle = SteeringAngle;
+            frontPassengerW.steerAngle = SteeringAngle;
+        }else
+        {
+            SteeringAngle = 0;
+            frontDriverW.steerAngle = SteeringAngle;
+            frontPassengerW.steerAngle = SteeringAngle;
+        }
         
-        SteeringAngle = HorizontalInputValue * 1;
-        frontDriverW.steerAngle = SteeringAngle;
-        frontPassengerW.steerAngle = SteeringAngle;
+        
     }
 
    
@@ -142,12 +155,12 @@ public class Player_Movement : MonoBehaviour
 
     void Brake()
     {
-        if (VerticalInputValue < 0 )
+        if (VerticalInputValue > 0.3 )
         {
             IsBraked = true;
             Debug.Log("Freine");
-            frontDriverW.brakeTorque = BrakeForce * -VerticalInputValue;
-            frontPassengerW.brakeTorque = BrakeForce * -VerticalInputValue;
+            frontDriverW.brakeTorque = BrakeForce * VerticalInputValue;
+            frontPassengerW.brakeTorque = BrakeForce * VerticalInputValue;
         }
         else 
         {

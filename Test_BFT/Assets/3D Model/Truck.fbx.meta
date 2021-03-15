@@ -3,7 +3,17 @@ guid: 11bd226e9f41cfe43a0e623012038863
 ModelImporter:
   serializedVersion: 20101
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: truck_lambert3
+    second: {fileID: 2100000, guid: 92dac42644ac7b84aad3979bd7262eef, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Fichier 20
+    second: {fileID: 2800000, guid: 69a37cb5809e9a94d96db9292043df0a, type: 3}
   materials:
     materialImportMode: 1
     materialName: 0
