@@ -158,7 +158,7 @@ public class Manager_Custom : MonoBehaviour
             {
                 renderersTruck[i].material = Resources.Load<Material>("Skin/Body/"+index);
             }
-            renderersTruck[i].material = Resources.Load<Material>("Skin/Roue/"+index);
+            //renderersTruck[i].material = Resources.Load<Material>("Skin/Roue/"+index);
 
             v_modif.ChangeSkin(index);
         }

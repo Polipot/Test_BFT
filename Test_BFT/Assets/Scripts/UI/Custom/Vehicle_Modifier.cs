@@ -32,7 +32,7 @@ public class Vehicle_Modifier : MonoBehaviour
                 mcus.renderersTruck[0].material = Resources.Load<Material>("Skin/Body/" + 0);
             }
 
-            
+            /*
             if (PlayerPrefs.HasKey("roue"))
             {
                 //Debug.Log("load roue");
@@ -44,7 +44,7 @@ public class Vehicle_Modifier : MonoBehaviour
 
                  PlayerPrefs.SetInt("roue", 0);
                  mcus.renderersTruck[i].material = Resources.Load<Material>("Skin/Roue/" + 0);
-            }
+            }*/
 
         }
 
