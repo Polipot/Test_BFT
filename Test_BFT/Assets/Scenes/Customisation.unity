@@ -286,7 +286,6 @@ GameObject:
   m_Component:
   - component: {fileID: 291648721}
   - component: {fileID: 291648720}
-  - component: {fileID: 291648719}
   - component: {fileID: 291648722}
   m_Layer: 0
   m_Name: Camera_texture
@@ -295,14 +294,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &291648719
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 291648718}
-  m_Enabled: 1
 --- !u!20 &291648720
 Camera:
   m_ObjectHideFlags: 0
@@ -396,6 +387,23 @@ MeshRenderer:
   m_CorrespondingSourceObject: {fileID: -2270277416618121376, guid: 11bd226e9f41cfe43a0e623012038863, type: 3}
   m_PrefabInstance: {fileID: 114679872}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &448633829 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 727378354520062255, guid: b5e23e3034fab6a4eb72abf957e2e492, type: 3}
+  m_PrefabInstance: {fileID: 727378353948946907}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &448633830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 448633829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0864288f760874a478f3f1779695ba93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &486992222 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4920744622202550391, guid: 9b18c2e7e4ee7ef4193949cd2606b440, type: 3}
@@ -574,7 +582,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 727378354520062254, guid: b5e23e3034fab6a4eb72abf957e2e492, type: 3}
   m_PrefabInstance: {fileID: 727378353948946907}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 448633829}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5e7e314330f3a6c4ca493d76c3abe402, type: 3}
@@ -585,7 +593,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 727378354520062242, guid: b5e23e3034fab6a4eb72abf957e2e492, type: 3}
   m_PrefabInstance: {fileID: 727378353948946907}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 448633829}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1a9f01e8d5c22694ca18f99a9d455713, type: 3}
@@ -1219,7 +1227,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Manager
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 727378354520062243, guid: b5e23e3034fab6a4eb72abf957e2e492, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b5e23e3034fab6a4eb72abf957e2e492, type: 3}
 --- !u!1001 &4920744622554943785
 PrefabInstance:
