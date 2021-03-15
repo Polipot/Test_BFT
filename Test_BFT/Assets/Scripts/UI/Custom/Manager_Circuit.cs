@@ -61,7 +61,7 @@ public class Manager_Circuit : MonoBehaviour
         //Debug.Log(index + "  " + circuits[2].NomCircuit );
 
 
-        icon_circuit = circuits[index].IconCircuit != null ? icon_circuit = circuits[index].IconCircuit : null;
+        icon_circuit.sprite = circuits[index].IconCircuit != null ? icon_circuit.sprite = circuits[index].IconCircuit : null;
 
         nom_circuit.text = circuits[index].NomCircuit != null? circuits[index].NomCircuit: "ERROR TEXT";
 
@@ -78,7 +78,7 @@ public class Manager_Circuit : MonoBehaviour
 [System.Serializable]
 public class Circuit
 {
-    public Image IconCircuit;
+    public Sprite IconCircuit;
     public string NomCircuit;
     public string NomSceneCircuit;
     public int EtoileGet;
