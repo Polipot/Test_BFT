@@ -11,6 +11,10 @@ public class Manager_Custom : MonoBehaviour
     private Vehicle_Modifier v_modif;
     private Stat_Manager stat_m;
 
+
+
+
+    [SerializeField] private MeshRenderer[] renderersTruck;
     #endregion
 
 
@@ -40,6 +44,7 @@ public class Manager_Custom : MonoBehaviour
 
 
     #region Var_Upgarde
+    [Header("Upgrade side")]
     [SerializeField] private Button Bt_Vit, Bt_Mania, Bt_Nitro;
     private Text t_Vit, t_Mania, t_Nitro;
 
@@ -49,6 +54,8 @@ public class Manager_Custom : MonoBehaviour
 
 
     #endregion
+
+
 
     #region Button_Upgrade
 
@@ -134,6 +141,25 @@ public class Manager_Custom : MonoBehaviour
 
         stat_m.Gold -= cost_Nitro;
         cost_Nitro += 10;
+    }
+
+
+    #endregion
+
+
+
+    #region Button_CustomTruck
+
+    public void ChangeSkin(int index)
+    {
+        for (int i = 0; i < renderersTruck.Length; i++)
+        {
+            if (i == 0)
+            {
+                renderersTruck[i].material = Resources.Load<Material>("Skin/Body/"+index);
+            }
+            renderersTruck[i].material = Resources.Load<Material>("Skin/Roue/"+index);
+        }
     }
 
 
