@@ -14,9 +14,7 @@ public class Player_Movement : MonoBehaviour
     Touch touch;
     Vector2 touchpos1;
     bool Firsttouch = true;
-    GameObject FirstPoint;
-    GameObject SecondPoint;
-    GameObject ThirdPoint;
+    private Vector2 FirstPoint, SecondPoint, ThirdPoint;
     
 
     [Header("WheelCollider")]
@@ -79,17 +77,21 @@ public class Player_Movement : MonoBehaviour
             touchpos1 = touch.position;
             if (Firsttouch == true)
             {
-                
+                /*
                 FirstPoint = Instantiate(Resources.Load<GameObject>("PointTouch"), touchpos1, Quaternion.identity);
                 SecondPoint = Instantiate(Resources.Load<GameObject>("PointTouch"), touchpos1, Quaternion.identity);
-                ThirdPoint = Instantiate(Resources.Load<GameObject>("PointTouch"), touchpos1, Quaternion.identity);
+                ThirdPoint = Instantiate(Resources.Load<GameObject>("PointTouch"), touchpos1, Quaternion.identity);*/
+                FirstPoint = touchpos1;
+                SecondPoint = touchpos1;
+                ThirdPoint = touchpos1;
+
                 Firsttouch = false;
             }
-            SecondPoint.transform.position = new Vector2(touchpos1.x, FirstPoint.transform.position.y);
-            ThirdPoint.transform.position = new Vector2(FirstPoint.transform.position.x, touchpos1.y);
-            HorizontalInputValue = (SecondPoint.transform.position.x - FirstPoint.transform.position.x) / 20;
+            SecondPoint = new Vector2(touchpos1.x, FirstPoint.y);
+            ThirdPoint = new Vector2(FirstPoint.x, touchpos1.y);
+            HorizontalInputValue = (SecondPoint.x - FirstPoint.x) / 20;
             HorizontalInputValue = Mathf.Clamp(Mathf.RoundToInt(HorizontalInputValue), -30, 30);
-            VerticalInputValue = FirstPoint.transform.position.y - ThirdPoint.transform.position.y;
+            VerticalInputValue = FirstPoint.y - ThirdPoint.y;
             VerticalInputValue = (Mathf.Clamp(VerticalInputValue, 0 , 500))/ 500 ;
             
 
