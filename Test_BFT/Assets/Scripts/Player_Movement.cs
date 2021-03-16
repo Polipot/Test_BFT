@@ -45,6 +45,7 @@ public class Player_Movement : MonoBehaviour
 
     private void Awake()
     {
+        Time.timeScale = 1;
         Rb = GetComponent<Rigidbody>();
        
     }
@@ -131,7 +132,6 @@ public class Player_Movement : MonoBehaviour
         
         
     }
-
    
     void Accelerate()
     {
@@ -175,7 +175,6 @@ public class Player_Movement : MonoBehaviour
         }
     }
         
-
     void UpdateWheelPose(WheelCollider mycollider, Transform mytransform)
     {
         Vector3 pos = mytransform.position;
@@ -194,5 +193,13 @@ public class Player_Movement : MonoBehaviour
         UpdateWheelPose(frontPassengerW, frontPassengerT);
         UpdateWheelPose(backDriverW, backDriverT);
         UpdateWheelPose(backPassengerW, backPassengerT);
+    }
+
+    public void TriggerPause()
+    {
+        if (Time.timeScale == 0)
+            Time.timeScale = 1;
+        else
+            Time.timeScale = 0;
     }
 }
