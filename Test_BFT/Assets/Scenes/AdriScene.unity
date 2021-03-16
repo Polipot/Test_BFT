@@ -186,7 +186,7 @@ Transform:
   - {fileID: 55858100}
   - {fileID: 999677120}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &55858096
 GameObject:
@@ -2427,7 +2427,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -3302,7 +3302,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1440234427
 GameObject:
@@ -4304,6 +4304,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1226233160944998176, guid: 62c8a3589f11b9346b76fa00c813d3b2, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 92dac42644ac7b84aad3979bd7262eef, type: 2}
     - target: {fileID: 3414097787005071842, guid: 62c8a3589f11b9346b76fa00c813d3b2, type: 3}
       propertyPath: debugText
       value: 
@@ -4350,7 +4354,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5791343165846264484, guid: 62c8a3589f11b9346b76fa00c813d3b2, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5791343165846264484, guid: 62c8a3589f11b9346b76fa00c813d3b2, type: 3}
       propertyPath: m_LocalPosition.x
