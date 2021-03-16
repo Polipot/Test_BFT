@@ -14,7 +14,7 @@ public class Manager_Custom : MonoBehaviour
 
 
 
-    [SerializeField] private MeshRenderer[] renderersTruck;
+    public MeshRenderer[] renderersTruck;
     #endregion
 
 
@@ -158,7 +158,9 @@ public class Manager_Custom : MonoBehaviour
             {
                 renderersTruck[i].material = Resources.Load<Material>("Skin/Body/"+index);
             }
-            renderersTruck[i].material = Resources.Load<Material>("Skin/Roue/"+index);
+            //renderersTruck[i].material = Resources.Load<Material>("Skin/Roue/"+index);
+
+            v_modif.ChangeSkin(index);
         }
     }
 
