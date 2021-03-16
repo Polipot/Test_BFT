@@ -62,8 +62,11 @@ public class Player_Movement : MonoBehaviour
 
     private void Update()
     {
-        debugText.text = " freinage = " + VerticalInputValue;
-        debugText2.text = " acceleration = " + frontDriverW.motorTorque;
+        if (debugText != null)
+            debugText.text = " freinage = " + VerticalInputValue;
+
+        if (debugText2 != null)
+            debugText2.text = " acceleration = " + frontDriverW.motorTorque;
     }    
 
     void GetInput()
@@ -99,15 +102,15 @@ public class Player_Movement : MonoBehaviour
             VerticalInputValue = 0;
         }
            
-       // if (Input.GetAxis("Horizontal") < 0)
-       // {
-        //    HorizontalInputValue = -30;
-       // }else if (Input.GetAxis("Horizontal") > 0)
-       // {
-       //     HorizontalInputValue = 30;
-       // }
-       // VerticalInputValue = Input.GetAxis("Vertical");
-        Debug.Log(VerticalInputValue);
+       /* if (Input.GetAxis("Horizontal") < 0)
+        {
+           HorizontalInputValue = -30;
+        }else if (Input.GetAxis("Horizontal") > 0)
+        {
+            HorizontalInputValue = 30;
+        }
+        VerticalInputValue = Input.GetAxis("Vertical");*/
+        //Debug.Log(VerticalInputValue);
     }
 
     void Steer()
