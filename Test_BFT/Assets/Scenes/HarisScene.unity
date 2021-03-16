@@ -28465,9 +28465,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1648477104}
-        m_TargetAssemblyTypeName: Button_Restart, Assembly-CSharp
-        m_MethodName: Restart
+      - m_Target: {fileID: 3414097786678390645}
+        m_TargetAssemblyTypeName: Player_Movement, Assembly-CSharp
+        m_MethodName: TriggerPause
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
