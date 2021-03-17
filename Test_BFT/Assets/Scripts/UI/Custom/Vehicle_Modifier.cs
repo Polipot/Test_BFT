@@ -39,7 +39,7 @@ public class Vehicle_Modifier : MonoBehaviour
     {
         if (mcus != null)
         {
-            for (int i = 0; i < mcus.renderersTruck.Length; i++)
+            /*for (int i = 0; i < mcus.renderersTruck.Length; i++)
             {
                 if (i == 0 && PlayerPrefs.HasKey("body"))
                 {
@@ -69,12 +69,12 @@ public class Vehicle_Modifier : MonoBehaviour
                     mcus.renderersTruck[i].material = Resources.Load<Material>("Skin/Roue/" + 2);
                 }
 
-            }
+            }*/
         }
         else if (pm != null)
         {
             // change skin of player
-            myrenderes[0].material = myrenderes[0].material = Resources.Load<Material>("Skin/Body/" + PlayerPrefs.GetInt("body"));
+            myrenderes[0].material = Resources.Load<Material>("Skin/Body/" + PlayerPrefs.GetInt("body"));
         }
     }
 
