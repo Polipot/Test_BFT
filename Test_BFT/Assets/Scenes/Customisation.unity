@@ -352,19 +352,19 @@ PrefabInstance:
     - target: {fileID: -8580974523323448853, guid: 11bd226e9f41cfe43a0e623012038863, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: b48bccad156aaaa4c85f3c3807babcbb, type: 2}
+      objectReference: {fileID: 2100000, guid: e7b0be8737b8408499c7636db1d845c7, type: 2}
     - target: {fileID: -3112158799323128946, guid: 11bd226e9f41cfe43a0e623012038863, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: b48bccad156aaaa4c85f3c3807babcbb, type: 2}
+      objectReference: {fileID: 2100000, guid: e7b0be8737b8408499c7636db1d845c7, type: 2}
     - target: {fileID: -2617807049932428478, guid: 11bd226e9f41cfe43a0e623012038863, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 92dac42644ac7b84aad3979bd7262eef, type: 2}
+      objectReference: {fileID: 2100000, guid: e7b0be8737b8408499c7636db1d845c7, type: 2}
     - target: {fileID: -2270277416618121376, guid: 11bd226e9f41cfe43a0e623012038863, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 92dac42644ac7b84aad3979bd7262eef, type: 2}
+      objectReference: {fileID: 2100000, guid: e7b0be8737b8408499c7636db1d845c7, type: 2}
     - target: {fileID: 919132149155446097, guid: 11bd226e9f41cfe43a0e623012038863, type: 3}
       propertyPath: m_Name
       value: Truck
@@ -372,7 +372,7 @@ PrefabInstance:
     - target: {fileID: 1258644553016671518, guid: 11bd226e9f41cfe43a0e623012038863, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 92dac42644ac7b84aad3979bd7262eef, type: 2}
+      objectReference: {fileID: 2100000, guid: e7b0be8737b8408499c7636db1d845c7, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 11bd226e9f41cfe43a0e623012038863, type: 3}
 --- !u!114 &183615801 stripped
@@ -610,6 +610,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0864288f760874a478f3f1779695ba93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myrenderes: []
 --- !u!114 &486992222 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4920744622202550391, guid: 9b18c2e7e4ee7ef4193949cd2606b440, type: 3}
