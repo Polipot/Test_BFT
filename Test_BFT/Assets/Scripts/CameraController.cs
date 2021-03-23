@@ -28,7 +28,7 @@ public class CameraController : MonoBehaviour
         this.transform.position = Vector3.SmoothDamp(this.transform.position, Target.position, ref positionSmoothDampvelocity, PositionSmoothTime);
 
         float rotationSmoothDampVelocity = 0f;
-        this.transform.rotation = Quaternion.Euler(new Vector3(0f, Mathf.SmoothDamp(this.transform.rotation.eulerAngles.y, target.rotation.eulerAngles.y, ref rotationSmoothDampVelocity, RotationSmoothTime), 0f));
+        this.transform.rotation = Quaternion.Euler(new Vector3(0f, Mathf.SmoothDamp(this.transform.rotation.eulerAngles.y, Target.rotation.eulerAngles.y, ref rotationSmoothDampVelocity, RotationSmoothTime), 0f));
     }
 
 }
