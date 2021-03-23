@@ -2706,6 +2706,17 @@ Transform:
   m_Father: {fileID: 469425217}
   m_RootOrder: 47
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 30}
+--- !u!114 &33904507 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3414097787005071842, guid: 62c8a3589f11b9346b76fa00c813d3b2, type: 3}
+  m_PrefabInstance: {fileID: 6760194174426956662}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00447d7ebd9d1e84a8e2f117b9273a16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &41842485
 GameObject:
   m_ObjectHideFlags: 0
@@ -35705,7 +35716,6 @@ GameObject:
   - component: {fileID: 1648477107}
   - component: {fileID: 1648477106}
   - component: {fileID: 1648477105}
-  - component: {fileID: 1648477104}
   m_Layer: 5
   m_Name: Button (1)
   m_TagString: Untagged
@@ -35733,18 +35743,6 @@ RectTransform:
   m_AnchoredPosition: {x: 139.4, y: 715.5}
   m_SizeDelta: {x: 160, y: 160}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1648477104
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1648477102}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6aaf894d65003a5408250cc57184477f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1648477105
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35788,9 +35786,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1648477104}
-        m_TargetAssemblyTypeName: Button_Restart, Assembly-CSharp
-        m_MethodName: Restart
+      - m_Target: {fileID: 33904507}
+        m_TargetAssemblyTypeName: Player_Movement, Assembly-CSharp
+        m_MethodName: TriggerPause
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
