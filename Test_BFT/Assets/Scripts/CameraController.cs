@@ -5,8 +5,8 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
     public Transform Target;
-    public float PositionSmoothTime;
-    public float RotationSmoothTime;
+    public float SmoothTimePosition;
+    public float SmoothTimeRotation;
 
     Transform pivot;
     Camera cam;
@@ -25,10 +25,11 @@ public class CameraController : MonoBehaviour
     void FixedUpdate()
     {
         Vector3 positionSmoothDampvelocity = Vector3.zero;
-        this.transform.position = Vector3.SmoothDamp(this.transform.position, Target.position, ref positionSmoothDampvelocity, PositionSmoothTime);
+        transform.position = Vector3.SmoothDamp(transform.position, Target.position, ref positionSmoothDampvelocity, SmoothTimePosition);
 
-        float rotationSmoothDampVelocity = 0f;
-        this.transform.rotation = Quaternion.Euler(new Vector3(0f, Mathf.SmoothDamp(this.transform.rotation.eulerAngles.y, Target.rotation.eulerAngles.y, ref rotationSmoothDampVelocity, RotationSmoothTime), 0f));
+        //float rotationSmoothDampVelocity = 0f;
+        //transform.rotation = Quaternion.Euler(new Vector3(0f, Mathf.SmoothDamp(transform.localEulerAngles.y, Target.eulerAngles.y, ref rotationSmoothDampVelocity, RotationSmoothTime), 0f));
+        transform.rotation = Quaternion.Lerp(transform.rotation, Target.rotation, Time.time * SmoothTimeRotation);
     }
 
 }
