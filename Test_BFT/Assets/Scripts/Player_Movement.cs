@@ -62,11 +62,11 @@ public class Player_Movement : MonoBehaviour
 
     private void Update()
     {
-        if (debugText != null)
+        /*if (debugText != null)
             debugText.text = " freinage = " + VerticalInputValue;
 
         if (debugText2 != null)
-            debugText2.text = " acceleration = " + frontDriverW.motorTorque;
+            debugText2.text = " acceleration = " + frontDriverW.motorTorque;*/
     }    
 
     void GetInput()
@@ -164,7 +164,6 @@ public class Player_Movement : MonoBehaviour
         if (VerticalInputValue > 0.3 )
         {
             IsBraked = true;
-            Debug.Log("Freine");
             frontDriverW.brakeTorque = BrakeForce * VerticalInputValue;
             frontPassengerW.brakeTorque = BrakeForce * VerticalInputValue;
         }

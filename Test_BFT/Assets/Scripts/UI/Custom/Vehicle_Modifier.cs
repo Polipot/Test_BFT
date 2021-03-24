@@ -74,7 +74,7 @@ public class Vehicle_Modifier : MonoBehaviour
         else if (pm != null)
         {
             // change skin of player
-            myrenderes[0].material = myrenderes[0].material = Resources.Load<Material>("Skin/Body/" + PlayerPrefs.GetInt("body"));
+            myrenderes[0].material = myrenderes[0].material = Resources.Load<Material>("Skin/CSBody/" + PlayerPrefs.GetInt("body"));
         }
     }
 
